@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-export default function Player({ initialName, symbol }) {
+export default function Player({ initialName, symbol , isActive}) {
   const [playerName, setPlayerName] = useState(initialName);
   const [editing, setEditing] = useState(false);
 
@@ -12,7 +12,7 @@ export default function Player({ initialName, symbol }) {
     setPlayerName(event.target.value); //this event pointer comes automatically from the input element
   }
   return (
-    <li>
+    <li className = {isActive ? "active" : undefined}>
       <span className="player">
         {editing ? (
           <input
