@@ -1,15 +1,17 @@
 import { useState } from "react";
 
-export default function Player({ initialName, symbol , isActive}) {
+export default function Player({ initialName, symbol , isActive, onChangeName}) {
   const [playerName, setPlayerName] = useState(initialName);
   const [editing, setEditing] = useState(false);
 
   function handleClick() {
     setEditing((editing) => !editing); //this is the recommended way to change based off previous state
+    onChangeName(symbol, playerName);
   }
 
   function handleChange(event) {
     setPlayerName(event.target.value); //this event pointer comes automatically from the input element
+    
   }
   return (
     <li className = {isActive ? "active" : undefined}>
