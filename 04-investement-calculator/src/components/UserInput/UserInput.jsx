@@ -25,7 +25,7 @@ export default function UserInput() {
         </p>
         <p>
           <label>Duration</label>
-          <input type = "number" required/>
+          <input type = "number" />
         </p>
       </div>
     </section>
