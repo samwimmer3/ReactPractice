@@ -22,13 +22,13 @@ git push origin --delete branchName
 
 HOW TO START BRANCH:
 
-git checkout -b <new-feature-branch>
+git checkout -b branchName
 
 git add .
 
 git commit -m "Started new feature"
 
-git push -u origin <new-feature-branch>
+git push -u origin branchName
 
 /
 
