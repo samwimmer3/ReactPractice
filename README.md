@@ -1,18 +1,14 @@
 HOW TO MERGE:
 
 git add .
-
-git commit -m "Completed feature on branch"
-
-git push origin <your-branch-name>
-
+git commit -m 'finished branch'
+git push -u origin branchName
 git checkout main
-
 git pull origin main
-
-git merge <your-branch-name>
-
+git merge branchName
 git push origin main
+git branch -d branchName
+git push origin --delete branchName
 
 /
 
