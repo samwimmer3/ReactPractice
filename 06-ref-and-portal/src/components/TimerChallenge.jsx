@@ -12,7 +12,7 @@ export default function TimerChallenge({ title, targetTime }) {
 
     timer.current = setTimeout(() => {
       setTimeExpired(true);
-      dialog.current.showModal(); //this ref makes it dim
+      dialog.current.open(); //this ref makes it dim
     }, targetTime * 1000);
   }
 
