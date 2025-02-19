@@ -1,13 +1,34 @@
 import Sidebar from "./components/Sidebar";
+import Project from "./components/Project";
+import NewProject from "./components/NewProject";
+import { useState } from "react";
 
 function App() {
+  
+  const [projects, setProjects] = useState([]);
+  const [activeProjectId, setActiveProjectId] = useState(1);
+  const [newProject, setNewProject] = useState(false);
+
+  const addProject = (title) => {
+    const newProject = { id: projects.length + 1, title, tasks: [] };
+    setProjects((prevProjects) => [...prevProjects, newProject]);
+    setActiveProjectId(newProject.id);
+  };
+
+  const activeProject = projects.find(
+    (project) => project.id === activeProjectId
+  );
+
   return (
     <>
       <div className="flex">
-        <Sidebar />
-        <main className="text-gray-500 flex-1 p-6 text-center justify-center flex flex-col"> 
-          <h1>Here is where the projects will be</h1>
-        </main>
+        <Sidebar
+          activeProjectId={activeProjectId}
+          projects={projects}
+          setActiveProjectId={setActiveProjectId}
+          setNewProject={setNewProject}
+        />
+        {newProject ? <NewProject addProject={addProject} /> : <Project activeProject = {activeProject}/> }
       </div>
     </>
   );
