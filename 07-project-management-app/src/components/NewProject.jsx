@@ -10,14 +10,13 @@ export default function NewProject({ addProject, setNewProject }) {
     addProject({ title, description, dueDate });
     setNewProject(false);
   };
-
-
   return (
     <>
-      <div className="w-full flex flex-col justify-center px-10">
+      <div className="w-full flex flex-col justify-center px-10 font-mono">
+        <h1 className="text-4xl font-bold text-zinc-800 ">New Project</h1>
         <label
           htmlFor="title"
-          className="block text-gray-700 text-xl font-bold mt-6">
+          className="block text-gray-700 text-xl font-bold mt-8">
           Title
         </label>
         <input
@@ -52,7 +51,7 @@ export default function NewProject({ addProject, setNewProject }) {
           onChange={(e) => setDueDate(e.target.value)}
         />
         <div className="flex justify-end space-x-6 mt-6">
-          <button className="hover:bg-gray-400 text-gray-800 font-bold py-2 px-6 rounded text-lg">
+          <button className="hover:bg-gray-400 text-gray-800 font-bold py-2 px-6 rounded text-lg" onClick = {() => setNewProject(false)}>
             Cancel
           </button>
           <button className="bg-zinc-900 hover:bg-zinc-700 text-white font-bold py-2 px-6 rounded text-lg" onClick={handleSave}>

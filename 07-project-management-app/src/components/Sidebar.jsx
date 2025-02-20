@@ -16,7 +16,7 @@ export default function Sidebar({
         {projects.map((project) => (
           <li
             key={project.id}
-            className={`cursor-pointer hover:text-zinc-500 text-zinc-300 px-2 py-2 rounded font-mono  ${
+            className={`cursor-pointer hover:text-zinc-500 text-zinc-300  rounded font-mono  ${
               activeProjectId === project.id ? "bg-zinc-800" : ""
             }`}>
             <button className = "block w-full py-2 px-6 text-xl" onClick={() => setActiveProjectId(project.id)}>
