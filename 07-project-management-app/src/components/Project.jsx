@@ -1,4 +1,4 @@
-export default function Project({ activeProject }) {
+export default function Project({ activeProject, deleteProject }) {
   return (
     <div className="w-full flex flex-col justify-center px-10">
       <div className="flex justify-between items-center w-full px-10 py-6">
